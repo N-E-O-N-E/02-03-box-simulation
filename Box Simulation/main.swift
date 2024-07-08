@@ -14,10 +14,11 @@ import Foundation
  andere Fähigkeiten durch gezieltes Training verbessern können."
  */
 
+ 
 // -----------------------------------------------------------------> 1.3. Instanz erzegen
 
-var boxerA = Boxer(vorname: "Donner", nachname: "Karlson", alter: 26, nationalitaet: "Deutsch", punkte: 100, staerke: 9, ausdauer: 85, quote: 95)
-var boxerB = Boxer(vorname: "Ali", nachname: "Mente", alter: 27, nationalitaet: "Türkisch", punkte: 100, staerke: 13, ausdauer: 80, quote: 90)
+var boxerA = Boxer(vorname: "Donner", nachname: "Karlson", alter: 26, nationalitaet: "Deutsch", health: 100, staerke: 9, ausdauer: 85, quote: 95)
+var boxerB = Boxer(vorname: "Ali", nachname: "Mente", alter: 27, nationalitaet: "Türkisch", health: 100, staerke: 13, ausdauer: 80, quote: 90)
 
 var boxRing1 = BoxingRing(boxringName: "Indoor-Ring Arena", boxringLand: "Deutschland", besucherLive: 15000, indoor: true)
 var boxRing2 = BoxingRing(boxringName: "Outdoor-Ring Arena", boxringLand: "Türkei", besucherLive: 12000, indoor: false)
@@ -35,9 +36,9 @@ Herausforderer "\(boxerB.vorname) \(boxerB.nachname)" mit einer Quote von \(boxe
 
 func FavoritBestimmen()  {
     
-    if boxerA.punkte + boxerA.staerke + boxerA.ausdauer + boxerA.quote > boxerB.punkte + boxerB.staerke + boxerB.ausdauer + boxerB.quote {
+    if boxerA.health + boxerA.staerke + boxerA.ausdauer + boxerA.quote > boxerB.health + boxerB.staerke + boxerB.ausdauer + boxerB.quote {
         print("Boxer \(boxerA.vorname) \(boxerA.nachname) ist klarer Favorit!")
-    } else if boxerA.punkte + boxerA.staerke + boxerA.ausdauer + boxerA.quote < boxerB.punkte + boxerB.staerke + boxerB.ausdauer + boxerB.quote {
+    } else if boxerA.health + boxerA.staerke + boxerA.ausdauer + boxerA.quote < boxerB.health + boxerB.staerke + boxerB.ausdauer + boxerB.quote {
         print("Boxer \(boxerB.vorname) \(boxerB.nachname) ist klarer Favorit!")
     } else {
         print("Es gibt keinen klaren Favoriten!")
@@ -46,7 +47,16 @@ func FavoritBestimmen()  {
 
 FavoritBestimmen()
 
-var boxerC = BoxerX(vorname: "Max", nachname: "Mustermann", gebDatum: "12.04.1983", nationalitaet: "Deutsch", punkte: 100, staerke: 13, ausdauer: 86, quote: 93)
+// Boxer speziell für Aufgabe 1.5 - Bonus mit Berechnung des Alters
+
+let boxerAlterBerechnen = BoxerX(vorname: "Max", nachname: "Mustermann", gebDatum: "15.08.1986", nationalitaet: "Deutsch", health: 100, staerke: 12, ausdauer: 87, quote: 90)
+print("Der Boxer für die Berechnung des Alters ist \(boxerAlterBerechnen.alter) Jahre alt.")
+
+
+
+
+
+
 
 
 
