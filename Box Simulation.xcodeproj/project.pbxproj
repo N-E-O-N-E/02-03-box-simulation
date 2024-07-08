@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CEA7E1892C3BD11B0079970B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7E1882C3BD11B0079970B /* main.swift */; };
+		FA2718472C3C11E8007C1488 /* boxer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2718462C3C11E8007C1488 /* boxer.swift */; };
+		FA2718492C3C1BB0007C1488 /* boxring.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2718482C3C1BB0007C1488 /* boxring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		CEA7E1852C3BD11B0079970B /* Box Simulation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Box Simulation"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA7E1882C3BD11B0079970B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FA2718462C3C11E8007C1488 /* boxer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boxer.swift; sourceTree = "<group>"; };
+		FA2718482C3C1BB0007C1488 /* boxring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boxring.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				CEA7E1882C3BD11B0079970B /* main.swift */,
+				FA2718462C3C11E8007C1488 /* boxer.swift */,
+				FA2718482C3C1BB0007C1488 /* boxring.swift */,
 			);
 			path = "Box Simulation";
 			sourceTree = "<group>";
@@ -120,6 +126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2718472C3C11E8007C1488 /* boxer.swift in Sources */,
+				FA2718492C3C1BB0007C1488 /* boxring.swift in Sources */,
 				CEA7E1892C3BD11B0079970B /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
