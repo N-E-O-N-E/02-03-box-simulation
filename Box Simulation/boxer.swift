@@ -51,17 +51,19 @@ struct BoxerX {
         
         // Zuerst wird ein DateFormatter erstellt, um den String in ein Date-Objekt zu konvertieren.
         let formatter = DateFormatter()
-        // Der "formatter" muss das Format der Zeichenkette kennen. Hier legt man das Format fest, was der Streingeingabe entspricht
+        // Der "formatter" muss das Format des Strings kennen. Hier legt man das Format fest, was der Stringeingabe entspricht
         formatter.dateFormat = "dd.mm.yyyy"
         
-        // Die Zeichenkette gebDatum wird in ein Date-Objekt geparst.
+        // Der String gebDatum wird in ein Date-Objekt geparst.
         let geburtstag = formatter.date(from: gebDatum)!
         
         // Ein aktueller Kalender wird erstellt
         let kalender = Calendar.current
-        // Berechnet die Anzahl Jahre zwischen Geburtstag und aktuellem Datum
+        
+        // Berechnet die Anzahl der Jahre zwischen Geburtstag und aktuellem Datum
         let alterComponents = kalender.dateComponents([.year], from: geburtstag, to: Date())
-        // Gibt das Jahr zurück
+        
+        // Gibt das Jahr zurück für den Int return
         return alterComponents.year!
     }
 }
