@@ -3,7 +3,7 @@ import Foundation
 
 // -----------------------------------------------------------------> 1.1. Boxer modellieren
 
-struct Boxer {
+struct BoxerEinfach {
     
     let vorname: String
     var nachname: String
@@ -22,7 +22,7 @@ struct Boxer {
 // 2) Berechne das aktuelle Alter des Boxers in Jahren, basierend auf dem übergebenen Geburtsdatum.
 // 3) Weise der Variablen für das Alter im Initialisierer, den berechneten Wert zu.
 
-struct BoxerX {
+struct Boxer {
     
     let vorname: String
     var nachname: String
@@ -44,7 +44,7 @@ struct BoxerX {
         self.ausdauer = ausdauer
         self.quote = quote
         
-        self.alter = BoxerX.berechneAlter(gebDatum: gebDatum)
+        self.alter = Boxer.berechneAlter(gebDatum: gebDatum)
     }
     
     static func berechneAlter(gebDatum: String) -> Int {
