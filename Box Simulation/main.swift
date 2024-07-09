@@ -46,19 +46,26 @@ func FavoritBestimmen()  {
     }
 }
 
-// Boxer Beschreibung
+// Boxer Beschreibung ------------------------------------------
 boxerA.description()
 boxerB.description()
-// Favorit bestimmen
+
+// Favorit bestimmen ------------------------------------------
 FavoritBestimmen()
-// Alter erhöhen
+
+// Alter erhöhen ------------------------------------------
 boxerA.editAlter(ageUp: 1)
-// Trainingsmethode
-boxerA.trainingsmethode()
-boxerB.trainingsmethode()
-// Regenerationsmethode
-boxerA.regenerationsmehode()
-boxerB.regenerationsmehode()
+
+// Trainingsmethode ------------------------------------------
+//boxerA.trainingsmethode()
+//boxerB.trainingsmethode()
+
+// Regenerationsmethode ------------------------------------------
+//boxerA.regenerationsmehode()
+//boxerB.regenerationsmehode()
+
 // Ausdauer Veränderung wird über didSet überwacht!
 
+// 2.5. Gemeinsames Training ------------------------------------------
+gemeinsamesTraining(boxerX: &boxerA, boxerY: &boxerB)
 

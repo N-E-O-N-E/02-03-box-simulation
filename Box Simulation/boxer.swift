@@ -54,9 +54,9 @@ struct Boxer {
     {
         didSet {
             if ausdauer > oldValue {
-                print("Aaah :-)")
+                print("Aaah mehr Ausdauer \(ausdauer) :-)")
             } else if ausdauer < oldValue {
-                print("Puhh :-(")
+                print("Puhh meine Ausdauer \(ausdauer) :-(")
             }
             
         }
@@ -119,12 +119,12 @@ struct Boxer {
         
         while staerke <= 100 {
             
-            if ausdauer > 40 {
+            if ausdauer > 10 {
                 print("Der Boxer \(vorname) \(nachname) verändert seine Stärke und seine Ausdauer")
                 staerke += 1
                 ausdauer -= 10
-                
-            } else if ausdauer < 40 {
+                sleep(1)
+            } else if ausdauer < 10 {
                     break
                 }
         }
@@ -137,6 +137,7 @@ struct Boxer {
             if ausdauer < 100 {
                 print("\nDer Boxer \(vorname) \(nachname) regeneriert seine Ausdauer")
                 ausdauer += 1
+                sleep(1)
             } else if ausdauer >= 100 {
                 ausdauer = 100
                 
@@ -145,18 +146,27 @@ struct Boxer {
         }
         
     }
+   
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-} // Ende des Struct
+} // Ende des Struc Boxer
 
 
+
+// Aufgabe 2.4 Bonus Gemeinsames Training-----------------------------------------------------------------------------------------------
+
+func gemeinsamesTraining(boxerX: inout Boxer, boxerY: inout Boxer) {
+    
+    while boxerX.ausdauer > 10 || boxerY.ausdauer > 10 {
+        
+        boxerX.trainingsmethode()
+        boxerY.trainingsmethode()
+        
+        boxerX.staerke += boxerX.staerke * (boxerY.staerke / 1000)
+        boxerY.staerke += boxerY.staerke * (boxerX.staerke / 1000)
+    
+    }
+    print("Keine Puste mehr. Das Training ist zuende.")
+    
+}
 
 
