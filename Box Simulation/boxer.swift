@@ -28,10 +28,25 @@ struct Boxer {
     var nachname: String
     let gebDatum: String
     var alter: Int
+    {
+        didSet {
+            print("Das Alter \(oldValue) des Boxers wurde auf \(alter) angepasst!\n")
+        }
+    }
     let nationalitaet: String
     var health: Int
     var staerke: Int
+    {
+        didSet {
+            print("Die Stärke hat sich geändert von \(oldValue) auf \(staerke)")
+        }
+    }
     var ausdauer: Int
+    {
+        didSet {
+            print("Die Ausdauer hat sich geändert von \(oldValue) auf \(ausdauer)")
+        }
+    }
     var quote: Int
     
     init(vorname: String, nachname: String, gebDatum: String, nationalitaet: String, health: Int, staerke: Int, ausdauer: Int, quote: Int) {
@@ -47,6 +62,7 @@ struct Boxer {
         self.alter = Boxer.berechneAlter(gebDatum: gebDatum)
     }
     
+    // Aufgabe 1.5 ----------------------------------------------------------------------------------------------------------------------------
     static func berechneAlter(gebDatum: String) -> Int {
         
         // Zuerst wird ein DateFormatter erstellt, um den String in ein Date-Objekt zu konvertieren.
@@ -66,7 +82,50 @@ struct Boxer {
         // Gibt das Jahr zurück für den Int return
         return alterComponents.year!
     }
-}
+    
+    // Aufgabe 2.1 ------------------------------------------------------------------------------------------------------------------------------
+    func description() {
+        print("""
+            Es tritt an \(vorname) \(nachname), geboren am \(gebDatum),
+            mit einem Alter von \(alter) und er Nationalität: \(nationalitaet).
+            
+            """)
+    }
+    
+    // Aufgabe 2.1 --------------------------------------------------------------------------------------------------------------------------------
+    mutating func editAlter(ageUp: Int) {
+        
+        alter += ageUp
+    
+    }
+    
+    // Aufgabe 2.2 -------------------------------------------------------------------------------------------------------------------------------
+    
+    mutating func trainingsmethode() {
+        
+        while ausdauer <= 100 {
+            
+            if ausdauer > 40 {
+                print("Der Boxer \(vorname) \(nachname) verändert seine Stärke und seine Ausdauer")
+                staerke += 1
+                ausdauer -= 10
+                
+            } else if ausdauer < 40 {
+                    break
+                }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+} // Ende des Struct
 
 
 
