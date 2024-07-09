@@ -35,6 +35,15 @@ struct Boxer {
     }
     let nationalitaet: String
     var health: Int
+    {
+        didSet {
+            if health > oldValue {
+                print("Hahaaa!")
+            } else if health < oldValue {
+                print("AUA!!!")
+            }
+        }
+    }
     var staerke: Int
     {
         didSet {
@@ -44,7 +53,12 @@ struct Boxer {
     var ausdauer: Int
     {
         didSet {
-            print("Die Ausdauer hat sich geändert von \(oldValue) auf \(ausdauer)")
+            if ausdauer > oldValue {
+                print("Aaah :-)")
+            } else if ausdauer < oldValue {
+                print("Puhh :-(")
+            }
+            
         }
     }
     var quote: Int

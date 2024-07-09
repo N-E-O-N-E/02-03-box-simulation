@@ -59,4 +59,6 @@ boxerB.trainingsmethode()
 // Regenerationsmethode
 boxerA.regenerationsmehode()
 boxerB.regenerationsmehode()
-// Ausdauer Veränderung überwachen
+// Ausdauer Veränderung wird über didSet überwacht!
+
+
