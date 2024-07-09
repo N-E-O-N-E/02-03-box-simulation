@@ -57,7 +57,6 @@ boxerA.editAlter(ageUp: 1)
 boxerA.trainingsmethode()
 boxerB.trainingsmethode()
 // Regenerationsmethode
-
-
-
+boxerA.regenerationsmehode()
+boxerB.regenerationsmehode()
 // Ausdauer Veränderung überwachen

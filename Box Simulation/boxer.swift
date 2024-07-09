@@ -103,7 +103,7 @@ struct Boxer {
     
     mutating func trainingsmethode() {
         
-        while ausdauer <= 100 {
+        while staerke <= 100 {
             
             if ausdauer > 40 {
                 print("Der Boxer \(vorname) \(nachname) verändert seine Stärke und seine Ausdauer")
@@ -114,6 +114,22 @@ struct Boxer {
                     break
                 }
         }
+    }
+    
+    mutating func regenerationsmehode() {
+        
+        while ausdauer != 100 {
+            
+            if ausdauer < 100 {
+                print("\nDer Boxer \(vorname) \(nachname) regeneriert seine Ausdauer")
+                ausdauer += 1
+            } else if ausdauer >= 100 {
+                ausdauer = 100
+                
+            }
+            
+        }
+        
     }
     
     
