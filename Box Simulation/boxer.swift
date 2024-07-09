@@ -58,7 +58,6 @@ struct Boxer {
             } else if ausdauer < oldValue {
                 print("Puhh meine Ausdauer \(ausdauer) :-(")
             }
-            
         }
     }
     var quote: Int
@@ -161,12 +160,11 @@ func gemeinsamesTraining(boxerX: inout Boxer, boxerY: inout Boxer) {
         boxerX.trainingsmethode()
         boxerY.trainingsmethode()
         
-        boxerX.staerke += boxerX.staerke * (boxerY.staerke / 1000)
-        boxerY.staerke += boxerY.staerke * (boxerX.staerke / 1000)
+        boxerX.staerke += boxerX.staerke * (boxerY.staerke / 100)
+        boxerY.staerke += boxerY.staerke * (boxerX.staerke / 100)
     
     }
     print("Keine Puste mehr. Das Training ist zuende.")
-    
 }
 
 
