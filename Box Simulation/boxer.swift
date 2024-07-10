@@ -30,7 +30,7 @@ struct Boxer {
     var alter: Int
     {
         didSet {
-            print("Das Alter \(oldValue) des Boxers wurde auf \(alter) angepasst!\n")
+            print(">>> Das Alter \(oldValue) des Boxers wurde auf \(alter) angepasst! <<<\n")
         }
     }
     let nationalitaet: String
@@ -47,16 +47,16 @@ struct Boxer {
     var staerke: Int
     {
         didSet {
-            print("Die Stärke hat sich geändert von \(oldValue) auf \(staerke)")
+            print("Die Stärke hat sich geändert von \(oldValue) auf \(staerke)\n")
         }
     }
     var ausdauer: Int
     {
         didSet {
             if ausdauer > oldValue {
-                print("Aaah mehr Ausdauer \(ausdauer) :-)")
+                print("Aaah meine Ausdauer steigt wieder auf \(ausdauer)! :-)\n")
             } else if ausdauer < oldValue {
-                print("Puhh meine Ausdauer \(ausdauer) :-(")
+                print("Puhh meine Ausdauer sinkt von \(oldValue) auf \(ausdauer) :-(\n")
             }
         }
     }
@@ -99,7 +99,7 @@ struct Boxer {
     // Aufgabe 2.1 ------------------------------------------------------------------------------------------------------------------------------
     func description() {
         print("""
-            Es tritt an \(vorname) \(nachname), geboren am \(gebDatum),
+            Es tritt an: \(vorname) \(nachname), geboren am \(gebDatum),
             mit einem Alter von \(alter) und er Nationalität: \(nationalitaet).
             
             """)
@@ -118,12 +118,12 @@ struct Boxer {
         
         while staerke <= 100 {
             
-            if ausdauer > 10 {
-                print("Der Boxer \(vorname) \(nachname) verändert seine Stärke und seine Ausdauer")
-                staerke += 1
-                ausdauer -= 10
-                // sleep(1)
-            } else if ausdauer < 10 {
+            if ausdauer > 0 && ausdauer <= 100 {
+                print("\(vorname) \(nachname) trainiert Stärke und Ausdauer\n")
+                staerke += 5
+                ausdauer -= 25
+                sleep(1)
+            } else if ausdauer == 0 {
                     break
                 }
         }
@@ -134,9 +134,9 @@ struct Boxer {
         while ausdauer != 100 {
             
             if ausdauer < 100 {
-                print("\nDer Boxer \(vorname) \(nachname) regeneriert seine Ausdauer")
-                ausdauer += 1
-                // sleep(1)
+                print("Der Boxer \(vorname) \(nachname) regeneriert seine Ausdauer\n")
+                ausdauer += 25
+                sleep(1)
             } else if ausdauer >= 100 {
                 ausdauer = 100
                 
@@ -155,7 +155,7 @@ struct Boxer {
 
 func gemeinsamesTraining(boxerX: inout Boxer, boxerY: inout Boxer) {
     
-    while boxerX.ausdauer > 10 || boxerY.ausdauer > 10 {
+    while boxerX.ausdauer > 0 || boxerY.ausdauer > 0 {
         
         boxerX.trainingsmethode()
         boxerY.trainingsmethode()
@@ -164,7 +164,7 @@ func gemeinsamesTraining(boxerX: inout Boxer, boxerY: inout Boxer) {
         boxerY.staerke += boxerY.staerke * (boxerX.staerke / 100)
     
     }
-    print("Keine Puste mehr. Das Training ist zuende.")
+    print("\n<<< Ein Boxer hat keine Puste mehr. Das gemeinsame Training ist zuende.>>>\n")
 }
 
 
