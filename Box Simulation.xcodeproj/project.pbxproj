@@ -11,6 +11,8 @@
 		FA2718472C3C11E8007C1488 /* boxer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2718462C3C11E8007C1488 /* boxer.swift */; };
 		FA2718492C3C1BB0007C1488 /* boxring.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2718482C3C1BB0007C1488 /* boxring.swift */; };
 		FA2D0D802C3EA4E900F9C60A /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D0D7F2C3EA4E900F9C60A /* enums.swift */; };
+		FAF5B9752C3ECC47007DE009 /* funktionen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5B9742C3ECC47007DE009 /* funktionen.swift */; };
+		FAF5B9772C3ED2C7007DE009 /* instanzen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5B9762C3ED2C7007DE009 /* instanzen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,8 @@
 		FA2718462C3C11E8007C1488 /* boxer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boxer.swift; sourceTree = "<group>"; };
 		FA2718482C3C1BB0007C1488 /* boxring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boxring.swift; sourceTree = "<group>"; };
 		FA2D0D7F2C3EA4E900F9C60A /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		FAF5B9742C3ECC47007DE009 /* funktionen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = funktionen.swift; sourceTree = "<group>"; };
+		FAF5B9762C3ED2C7007DE009 /* instanzen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instanzen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				FA2718462C3C11E8007C1488 /* boxer.swift */,
 				FA2718482C3C1BB0007C1488 /* boxring.swift */,
 				FA2D0D7F2C3EA4E900F9C60A /* enums.swift */,
+				FAF5B9742C3ECC47007DE009 /* funktionen.swift */,
+				FAF5B9762C3ED2C7007DE009 /* instanzen.swift */,
 			);
 			path = "Box Simulation";
 			sourceTree = "<group>";
@@ -129,10 +135,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF5B9772C3ED2C7007DE009 /* instanzen.swift in Sources */,
 				FA2718472C3C11E8007C1488 /* boxer.swift in Sources */,
 				FA2718492C3C1BB0007C1488 /* boxring.swift in Sources */,
 				FA2D0D802C3EA4E900F9C60A /* enums.swift in Sources */,
 				CEA7E1892C3BD11B0079970B /* main.swift in Sources */,
+				FAF5B9752C3ECC47007DE009 /* funktionen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
