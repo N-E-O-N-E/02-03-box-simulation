@@ -122,7 +122,7 @@ struct Boxer {
                 print("Der Boxer \(vorname) \(nachname) verändert seine Stärke und seine Ausdauer")
                 staerke += 1
                 ausdauer -= 10
-                sleep(1)
+                // sleep(1)
             } else if ausdauer < 10 {
                     break
                 }
@@ -136,7 +136,7 @@ struct Boxer {
             if ausdauer < 100 {
                 print("\nDer Boxer \(vorname) \(nachname) regeneriert seine Ausdauer")
                 ausdauer += 1
-                sleep(1)
+                // sleep(1)
             } else if ausdauer >= 100 {
                 ausdauer = 100
                 

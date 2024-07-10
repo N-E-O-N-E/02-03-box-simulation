@@ -69,3 +69,31 @@ boxerA.editAlter(ageUp: 1)
 // 2.5. Gemeinsames Training ------------------------------------------
 gemeinsamesTraining(boxerX: &boxerA, boxerY: &boxerB)
 
+
+// Aufgabe 3.1 Kampfrunden ---------------------------------------------
+
+let zufallsZahl = Int.random(in: 1...4)
+
+switch zufallsZahl {
+case 1: print("\nDer Kampf ist heute nach 1 Runde vorbei!")
+case 2: print("\nHeute geht der Kampf 2 Runden!")
+case 3: print("\nDer Kampf geht heute 3 Runden!")
+case 4: print("\nInsgesamt geht der Kampf heute 4 Runden!")
+default: break
+}
+
+// Aufgabe 3.2 Wetterbedingungen ---------------------------------------------
+
+var wetterbedingungen: wetter = .sonnig
+
+
+switch wetterbedingungen {
+case .sonnig:
+    print("Das Wetter heute ist schön sonnig!")
+case .regnerisch:
+    print("Das Wetter ist heute regnerisch!")
+case.bedeckt:
+    print("Der Himmel ist heute bedeckt!")
+default: break
+    
+}
