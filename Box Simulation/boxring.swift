@@ -14,6 +14,13 @@ struct BoxingRing {
     let boxringName: String
     let boxringLand: String
     var besucherLive: Int
-    var indoor: Bool
+    var standort: standortTyp
+    
+    mutating func editStandort(neuerStandort: standortTyp) {
+        self.standort = neuerStandort
+    }
     
 }
+
+
+

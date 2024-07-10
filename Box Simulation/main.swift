@@ -4,24 +4,14 @@ import Foundation
 
 // ------------------------------------------------------------------------------ Aufgabe 1.0  Projekt aufsetzen
 
-/*
- "Das Sportinstitut beauftragt die Entwicklung einer Boxsimulation.
- In dieser Anwendung sollen Boxer mit individuellen Attributen wie Stärke,
- Lebenspunkte und Präzision erstellt werden können. Es ist erforderlich,
- dass diese Boxer in simulierten Kämpfen gegeneinander antreten können und
- ein Sieger anhand der jeweiligen Attribute berechnet wird. Zusätzlich soll die
- Anwendung eine Trainingsfunktion enthalten, durch die Boxer ihre Stärke und
- andere Fähigkeiten durch gezieltes Training verbessern können."
- */
 
- 
 // -----------------------------------------------------------------> 1.3. Instanz erzegen
 
 var boxerA = Boxer(vorname: "Donner", nachname: "Wetter", gebDatum: "15.08.1986", nationalitaet: "Deutsch", health: 100, staerke: 9, ausdauer: 87, quote: 93)
 var boxerB = Boxer(vorname: "Ali", nachname: "Mente", gebDatum: "23.01.1984", nationalitaet: "Türkisch", health: 100, staerke: 12, ausdauer: 82, quote: 91)
 
-var boxRing1 = BoxingRing(boxringName: "Indoor-Ring Arena", boxringLand: "Deutschland", besucherLive: 15000, indoor: true)
-var boxRing2 = BoxingRing(boxringName: "Outdoor-Ring Arena", boxringLand: "Türkei", besucherLive: 12000, indoor: false)
+var boxRing1 = BoxingRing(boxringName: "Indoor-Ring Arena", boxringLand: "Deutschland", besucherLive: 15000, standort: .studio)
+var boxRing2 = BoxingRing(boxringName: "Outdoor-Ring Arena", boxringLand: "Türkei", besucherLive: 12000, standort: .aussen)
 
 print("""
 Guten Tag zum heutigen Kampf in der "\(boxRing1.boxringName)" live aus "\(boxRing1.boxringLand)",
