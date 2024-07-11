@@ -24,6 +24,11 @@ struct BoxerEinfach {
 
 struct Boxer {
     
+    // Aufgabe 4.1. Schwächen des Boxers
+    private var schwaeche: String = "zu wenig Deckung"
+    
+    static var angetreteneBoxer: Int = 0
+    
     let vorname: String
     var nachname: String
     let gebDatum: String
@@ -38,9 +43,9 @@ struct Boxer {
     {
         didSet {
             if health > oldValue {
-                print("Hahaaa!")
+                print("Gesundheit regeneriert sich um \(health) %")
             } else if health < oldValue {
-                print("AUA!!!")
+                print("AUA!!! Schlag kassiert! Gesundheit sinkt auf \(health)\n")
             }
         }
     }
@@ -54,15 +59,17 @@ struct Boxer {
     {
         didSet {
             if ausdauer > oldValue {
-                print("Aaah meine Ausdauer steigt wieder auf \(ausdauer)! :-)\n")
+                print("Aaah meine Ausdauer erholt sich um \(ausdauer - oldValue)! :-)\n")
             } else if ausdauer < oldValue {
-                print("Puhh meine Ausdauer sinkt von \(oldValue) auf \(ausdauer) :-(\n")
+                print("Puhh meine Ausdauer sinkt um \(oldValue - ausdauer) :-(\n")
             }
         }
     }
     var quote: Int
     
-    init(vorname: String, nachname: String, gebDatum: String, nationalitaet: String, health: Int, staerke: Int, ausdauer: Int, quote: Int) {
+    
+    // Init
+    init(vorname: String, nachname: String, gebDatum: String, nationalitaet: String, health: Int, staerke: Int, ausdauer: Int, quote: Int, schwaeche: String) {
         self.vorname = vorname
         self.nachname = nachname
         self.gebDatum = gebDatum
@@ -71,8 +78,19 @@ struct Boxer {
         self.staerke = staerke
         self.ausdauer = ausdauer
         self.quote = quote
-        
+        self.schwaeche = schwaeche
         self.alter = Boxer.berechneAlter(gebDatum: gebDatum)
+        
+        Boxer.erhoeheBoxerCount()
+        
+    }
+    
+    // Aufgabe 4.2. Gesamtanzahl Boxer zählen
+    
+    static func erhoeheBoxerCount() {
+        angetreteneBoxer += 1
+        print("Anzahl erstelter Boxer aktuell: \(Boxer.angetreteneBoxer)\n")
+
     }
     
     // Aufgabe 1.5 ----------------------------------------------------------------------------------------------------------------------------
@@ -101,7 +119,6 @@ struct Boxer {
         print("""
             Es tritt an: \(vorname) \(nachname), geboren am \(gebDatum),
             mit einem Alter von \(alter) und er Nationalität: \(nationalitaet).
-            
             """)
     }
     
@@ -122,7 +139,7 @@ struct Boxer {
                 print("\(vorname) \(nachname) trainiert Stärke und Ausdauer\n")
                 staerke += 5
                 ausdauer -= 25
-                health -= 20
+                health -= Int.random(in: 15...20)
                 sleep(1)
             } else if ausdauer == 0 {
                     break
@@ -137,7 +154,7 @@ struct Boxer {
             if ausdauer < 100 {
                 print("Der Boxer \(vorname) \(nachname) regeneriert seine Ausdauer\n")
                 ausdauer += 25
-                health += 20
+                health += Int.random(in: 15...20)
                 sleep(1)
             } else if ausdauer >= 100 {
                 ausdauer = 100
@@ -147,7 +164,46 @@ struct Boxer {
         }
         
     }
+    
+    mutating func kampfAngriff() {
+        
+        if ausdauer > 0 {
+            
+            print("+++++++++ \(vorname) \(nachname) Kämpft +++++++++++++++++++++++++++++++++++++++++ \n")
+            ausdauer -= Int.random(in: 10...20)
+            
+            sleep(1)
+        } else {
+            ausdauer = 0
+        }
+                
+
+    }
+    
+    mutating func kampfVerteidigung() {
+        
+        if ausdauer > 0 && health > 0 {
+            
+            print("######### \(vorname) \(nachname) kassiert! ####################################### \n")
+            ausdauer -= Int.random(in: 5...10)
+            health -= Int.random(in: 10...20)
+            
+            sleep(1)
+            
+        } else {
+            ausdauer = 0
+            health = 0
+        }
+
+    }
+    
    
+    // Aufgabe 4.1. Schwächen des Boxers
+
+    func getSchwaeche() -> String {
+       // print("Der Boxer hat die Einschränkung: \(schwaeche)\n")
+        return schwaeche
+    }
     
 } // Ende des Struc Boxer
 
@@ -169,4 +225,27 @@ func gemeinsamesTraining(boxerX: inout Boxer, boxerY: inout Boxer) {
     print("\n<<< Ein Boxer hat keine Puste mehr. Das gemeinsame Training ist zuende.>>>\n")
 }
 
-
+func gemeinsamerKampf(boxerX: inout Boxer, boxerY: inout Boxer) {
+    
+    while boxerX.health > 0 && boxerY.health > 0 || boxerX.ausdauer > 0 && boxerY.ausdauer > 0 {
+        
+        var count = randomInt()
+        
+        switch count {
+        case 1:
+            boxerX.kampfAngriff()
+            boxerY.kampfVerteidigung()
+            boxerX.staerke += boxerX.staerke * (boxerY.staerke / 100)
+            
+        case 2:
+            boxerX.kampfVerteidigung()
+            boxerY.kampfAngriff()
+            boxerY.staerke += boxerY.staerke * (boxerX.staerke / 100)
+        default:
+            print("Beide Boxer warten...")
+        }
+       
+    }
+    
+    print("\n<<<<<<<<<<<<<<<<<<< Ein Boxer ist besiegt! Der Kampf ist zuende. >>>>>>>>>>>>>>>>>>>>>>\n")
+}

@@ -7,12 +7,20 @@
 
 import Foundation
 
+// Random Int
+func randomInt() -> Int {
+    return Int.random(in: 1...2)
+}
+
 
 func willkommen() {
     print("""
-    Guten Tag zum heutigen Kampf in der "\(boxRing.boxringName)" live aus "\(boxRing.boxringLand)",
+    Willkommen zur heutigen Show in der "\(boxRing.boxringName)" live aus "\(boxRing.boxringLand)",
     wo "\(boxerA.vorname) \(boxerA.nachname)" mit einer Quote von \(boxerA.quote) % gegen seinen
     Herausforderer "\(boxerB.vorname) \(boxerB.nachname)" mit einer Quote von \(boxerB.quote) % antreten wird.
+    
+    Boxer "\(boxerC.vorname) \(boxerC.nachname)" und Boxer "\(boxerD.vorname) \(boxerD.nachname)"
+    werden später eintreffen!
     
     """)
 }
@@ -59,14 +67,7 @@ func wetterbedingungen(dasWetter: wetter) {
         print("Das Wetter ist heute regnerisch!\n")
     case.bedeckt:
         print("Der Himmel ist heute bedeckt!\n")
-    default:
-        break
+    
         
     }
 }
-
-
-
-
-
-

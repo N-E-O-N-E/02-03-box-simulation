@@ -10,22 +10,24 @@ sleep(1)
 kampfrunden()
 sleep(1)
 wetterbedingungen(dasWetter: .sonnig)
-sleep(2)
-
+sleep(1)
 // Boxer Beschreibung ------------------------------------------
 boxerA.description()
+print("Der Boxer hat die Einschränkung: \(boxerA.getSchwaeche())\n")
 boxerB.description()
-sleep(3)
+print("Der Boxer hat die Einschränkung: \(boxerB.getSchwaeche())\n")
+sleep(1)
 
 // Favorit bestimmen ------------------------------------------
 FavoritBestimmen()
 sleep(1)
 
-// Alter erhöhen ------------------------------------------
+// Alter erhöhen ----------------------------------------------
 boxerA.editAlter(ageUp: 1)
 sleep(1)
 
-// Trainingsmethode ------------------------------------------
+/*
+ // Trainingsmethode ------------------------------------------
 print("---------------------------------------")
 print("##### Das Training kann beginnen! #####")
 print("---------------------------------------")
@@ -46,4 +48,8 @@ print("##### Das gemeinsame Training kann beginnen! #####")
 print("--------------------------------------------------")
 gemeinsamesTraining(boxerX: &boxerA, boxerY: &boxerB)
 
+*/
+
+// 4.3. Boxkampf
+gemeinsamerKampf(boxerX: &boxerA, boxerY: &boxerB)
 
