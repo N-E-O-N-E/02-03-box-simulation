@@ -79,6 +79,7 @@ struct Boxer {
         self.ausdauer = ausdauer
         self.quote = quote
         self.schwaeche = schwaeche
+        
         self.alter = Boxer.berechneAlter(gebDatum: gebDatum)
         
         Boxer.erhoeheBoxerCount()
@@ -208,44 +209,3 @@ struct Boxer {
 } // Ende des Struc Boxer
 
 
-
-// Aufgabe 2.4 Bonus Gemeinsames Training-----------------------------------------------------------------------------------------------
-
-func gemeinsamesTraining(boxerX: inout Boxer, boxerY: inout Boxer) {
-    
-    while boxerX.ausdauer > 0 || boxerY.ausdauer > 0 {
-        
-        boxerX.trainingsmethode()
-        boxerY.trainingsmethode()
-        
-        boxerX.staerke += boxerX.staerke * (boxerY.staerke / 100)
-        boxerY.staerke += boxerY.staerke * (boxerX.staerke / 100)
-    
-    }
-    print("\n<<< Ein Boxer hat keine Puste mehr. Das gemeinsame Training ist zuende.>>>\n")
-}
-
-func gemeinsamerKampf(boxerX: inout Boxer, boxerY: inout Boxer) {
-    
-    while boxerX.health > 0 && boxerY.health > 0 || boxerX.ausdauer > 0 && boxerY.ausdauer > 0 {
-        
-        var count = randomInt()
-        
-        switch count {
-        case 1:
-            boxerX.kampfAngriff()
-            boxerY.kampfVerteidigung()
-            boxerX.staerke += boxerX.staerke * (boxerY.staerke / 100)
-            
-        case 2:
-            boxerX.kampfVerteidigung()
-            boxerY.kampfAngriff()
-            boxerY.staerke += boxerY.staerke * (boxerX.staerke / 100)
-        default:
-            print("Beide Boxer verschnaufen ein wenig...")
-        }
-       
-    }
-    
-    print("\n<<<<<<<<<<<<<<<<<<< Ein Boxer ist besiegt! Der Kampf ist zuende. >>>>>>>>>>>>>>>>>>>>>>\n")
-}

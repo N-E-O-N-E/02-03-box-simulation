@@ -39,8 +39,8 @@ func matchBoxer(boxer: RandomBoxerEnum) -> Boxer{
 
 // Automatisches Erstellen eines Boxers mit Listen als Parameterträger -----------------------------------------------------
 // Variablen für die autom. Erszellung der Inhalte
-var listVornamen: Array = ["Sebastian", "Ralf", "Jürgen", "Hans", "Leon", "Patrick", "Steffen", "Frank", "Joseph"]
-var listNachnamen: Array = ["Müller", "Meyer", "Schmitt", "Jansen", "Höllinger", "Braun", "Becker", "Keller", "Wagner"]
+var listVornamen: Array = ["Sebastian", "Ralf", "Adam", "Hans", "Leon", "Patrick", "Steffen", "Frank", "Joseph", "Julian", "Markus", "Lars", "Andreas", "Alexander", "Daniel", "Anton", "Felix", "Tom"]
+var listNachnamen: Array = ["Müller", "Meyer", "Schmitt", "Jansen", "Höllinger", "Braun", "Becker", "Keller", "Wagner", "Mohr", "Weber", "Schneider", "König", "Berger", "Huber", "Wolf", "Herrmann", "Schwarz"]
 var listGebDaten: Array = ["01.02.1986", "03.04.1982", "12.07.1981", "21.09.1980", "24.05.1985", "09.08.1988", "05.06.1979", "29.12.1988", "20.10.1982"]
 var listNationalitaet: Array = ["Deutscher", "Schweizer"]
 var listSchwaeche: Array = ["leichte Deckung","geringe Reaktion", "zu impulsiv", "verletzung linker Arm", "zu selbstsicher", "unerfahren"]
@@ -76,14 +76,15 @@ func FavoritBestimmen(boxer1: Boxer, boxer2: Boxer)  {
 // Aufgabe 3.1 Kampfrunden ---------------------------------------------
 func kampfrunden() -> Int{
     
-    let zufallsZahl = Int.random(in: 1...4)
+    let zufallsZahl = Int.random(in: 4...8)
 
     switch zufallsZahl {
         
-    case 1: print("Der Kampf ist heute nach 1 Runde vorbei!\n")
-    case 2: print("Heute geht der Kampf 2 Runden!\n")
-    case 3: print("Der Kampf geht heute 3 Runden!\n")
-    case 4: print("Insgesamt geht der Kampf heute 4 Runden!\n")
+    case 4: print("Der Kampf könnte schon nach 4 Runden vorbei sein...\n")
+    case 5: print("Heute geht der Kampf sicher nicht weiter als 5 Runden...\n")
+    case 6: print("Der Kampf geht heute sicher über 6 Runden...\n")
+    case 7: print("Insgesamt geht der Kampf heute nicht über 7 Runden...\n")
+    case 8: print("Insgesamt geht der Kampf heute über die 8 Runden hinaus...\n")
         
     default: break
         
@@ -110,3 +111,46 @@ func wetterbedingungen(dasWetter: wetter) {
         
     }
 }
+
+
+// Aufgabe 2.4 Bonus Gemeinsames Training-----------------------------------------------------------------------------------------------
+
+func gemeinsamesTraining(boxerX: inout Boxer, boxerY: inout Boxer) {
+    
+    while boxerX.ausdauer > 0 || boxerY.ausdauer > 0 {
+        
+        boxerX.trainingsmethode()
+        boxerY.trainingsmethode()
+        
+        boxerX.staerke += boxerX.staerke * (boxerY.staerke / 100)
+        boxerY.staerke += boxerY.staerke * (boxerX.staerke / 100)
+    
+    }
+    print("\n<<< Ein Boxer hat keine Puste mehr. Das gemeinsame Training ist zuende.>>>\n")
+}
+
+func gemeinsamerKampf(boxerX: inout Boxer, boxerY: inout Boxer) {
+    
+    while boxerX.health > 0 && boxerY.health > 0 || boxerX.ausdauer > 0 && boxerY.ausdauer > 0 {
+        
+        var count = randomInt()
+        
+        switch count {
+        case 1:
+            boxerX.kampfAngriff()
+            boxerY.kampfVerteidigung()
+            boxerX.staerke += boxerX.staerke * (boxerY.staerke / 100)
+            
+        case 2:
+            boxerX.kampfVerteidigung()
+            boxerY.kampfAngriff()
+            boxerY.staerke += boxerY.staerke * (boxerX.staerke / 100)
+        default:
+            print("Beide Boxer verschnaufen ein wenig...")
+        }
+       
+    }
+    
+    print("\n<<<<<<<<<<<<<<<<<<< Ein Boxer ist besiegt! Der Kampf ist zuende. >>>>>>>>>>>>>>>>>>>>>>\n")
+}
+
