@@ -4,14 +4,27 @@ import Foundation
 
 // ------------------------------------------------------------------------------ Aufgabe 1.0  Projekt aufsetzen
 
+// Boxer zufällig bestimmen -------------------------------------
+
+//var boxerA = matchBoxer(boxer: randomBoxer())
+//var boxerB = matchBoxer(boxer: randomBoxer())
+
+var boxerA = generateBoxer()
+var boxerB = generateBoxer()
+
 // Start --------------------------------------------------------
-willkommen()
+willkommen(boxer1: boxerA, boxer2: boxerB)
 sleep(1)
-kampfrunden()
+
+// Kampfrunden werden bestimmt -----------------------------------
+var kampfRunden: Int = kampfrunden()
 sleep(1)
+
+// Wetterbedingungen --------------------------------------------
 wetterbedingungen(dasWetter: .sonnig)
 sleep(1)
-// Boxer Beschreibung ------------------------------------------
+
+// Boxer Beschreibungen ------------------------------------------
 boxerA.description()
 print("Der Boxer hat die Einschränkung: \(boxerA.getSchwaeche())\n")
 boxerB.description()
@@ -19,7 +32,7 @@ print("Der Boxer hat die Einschränkung: \(boxerB.getSchwaeche())\n")
 sleep(1)
 
 // Favorit bestimmen ------------------------------------------
-FavoritBestimmen()
+FavoritBestimmen(boxer1: boxerA, boxer2: boxerB)
 sleep(1)
 
 // Alter erhöhen ----------------------------------------------
