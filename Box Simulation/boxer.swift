@@ -242,7 +242,7 @@ func gemeinsamerKampf(boxerX: inout Boxer, boxerY: inout Boxer) {
             boxerY.kampfAngriff()
             boxerY.staerke += boxerY.staerke * (boxerX.staerke / 100)
         default:
-            print("Beide Boxer warten...")
+            print("Beide Boxer verschnaufen ein wenig...")
         }
        
     }

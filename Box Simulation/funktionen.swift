@@ -18,7 +18,7 @@ enum RandomBoxerEnum {
     case ersterBoxer, zweiterBoxer, dritterBoxer, vierterBoxer
 }
 func randomBoxer() -> RandomBoxerEnum {
-    let randomBoxerNumber: Int = randomInt()
+    let randomBoxerNumber = randomInt()
     switch randomBoxerNumber {
     case 1: return .ersterBoxer
     case 2: return .zweiterBoxer
