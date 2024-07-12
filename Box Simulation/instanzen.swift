@@ -9,7 +9,7 @@ import Foundation
 
 
 
-// Bixring wird erstellt
+// Boxring wird erstellt
 var boxRing = BoxingRing(boxringName: "Indoor-Ring Arena", boxringLand: "Deutschland", besucherLive: 15000, standort: .studio)
 
 // Boxer werden erstellt
