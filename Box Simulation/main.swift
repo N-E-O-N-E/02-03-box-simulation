@@ -40,14 +40,14 @@ boxerA.editAlter(ageUp: 1)
 sleep(1)
 
 /*
- // Trainingsmethode ------------------------------------------
+  Trainingsmethode ------------------------------------------
 print("---------------------------------------")
 print("##### Das Training kann beginnen! #####")
 print("---------------------------------------")
 boxerA.trainingsmethode()
 boxerB.trainingsmethode()
 sleep(1)
-// Regenerationsmethode ------------------------------------------
+ Regenerationsmethode ------------------------------------------
 print("-------------------------------------")
 print("##### Das Regenerieren startet! #####")
 print("-------------------------------------")
@@ -55,7 +55,7 @@ boxerA.regenerationsmehode()
 boxerB.regenerationsmehode()
 sleep(1)
 
-// 2.5. Gemeinsames Training ------------------------------------------
+ 2.5. Gemeinsames Training ------------------------------------------
 print("--------------------------------------------------")
 print("##### Das gemeinsame Training kann beginnen! #####")
 print("--------------------------------------------------")
@@ -63,6 +63,6 @@ gemeinsamesTraining(boxerX: &boxerA, boxerY: &boxerB)
 
 */
 
-// 4.3. Boxkampf
+// 4.3. Boxkampf -------------------------------------------------
 gemeinsamerKampf(boxerX: &boxerA, boxerY: &boxerB)
 

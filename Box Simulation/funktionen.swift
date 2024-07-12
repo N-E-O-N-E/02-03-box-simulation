@@ -133,7 +133,7 @@ func gemeinsamerKampf(boxerX: inout Boxer, boxerY: inout Boxer) {
     
     while boxerX.health > 0 && boxerY.health > 0 || boxerX.ausdauer > 0 && boxerY.ausdauer > 0 {
         
-        var count = randomInt()
+        let count = randomInt()
         
         switch count {
         case 1:
